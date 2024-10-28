@@ -12,7 +12,16 @@ class Time:
         self.hour = hour
         self.minute = minute
         self.second = second
-
+#checks if other input is the same type with same attributes
+    def __eq__(self,other:any)->bool:
+        if type(other) != Time:
+                return False
+        return (self.hour == other.hour and
+                self.minute == other.minute and
+                self.second == other.second)
+#returns Time input as a string
+    def __repr__(self)->str:
+        return "hour: {}, minute: {}, second: {}".format(self.hour,self.minute,self.second)
 
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 
